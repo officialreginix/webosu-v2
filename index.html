@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="js/tempVars.js"></script>
+    <script src="js/mapsData.js"></script>
+    <script src="js/menu.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="menu_window">
+      <div class="menu_wrapper">
+        <div class="settings_heading">
+          choose track
+        </div>
+      </div>
+      <div class="settings_wrapper">
+        <div class="settings_heading">Choose size of circles</div>
+        <div class="settings_radius">
+          <div
+            onclick="changeCircleRadius(event,'50')"
+            style="width: 50px; height: 50px;"
+            class="settings_radius__item"
+          >
+            50
+          </div>
+          <div
+            onclick="changeCircleRadius(event,'100')"
+            style="width: 100px; height: 100px;"
+            class="settings_radius__item"
+          >
+            100
+          </div>
+          <div
+            onclick="changeCircleRadius(event,'150')"
+            class="settings_radius__item"
+          >
+            150
+          </div>
+        </div>
+        <div class="settings_heading">
+          Choose time between clicks
+        </div>
+        <div class="settings_time">
+          <div onclick="changeSpeed(event, 500)" class="settings_time__item">
+            0.5s
+          </div>
+          <div onclick="changeSpeed(event, 1000)" class="settings_time__item">
+            1s
+          </div>
+          <div onclick="changeSpeed(event, 1500)" class="settings_time__item">
+            1.5s
+          </div>
+        </div>
+        <div
+          onclick="document.documentElement.requestFullscreen()"
+          class="settings_fullscreen"
+        >
+          Fullscreen
+        </div>
+      </div>
+      <div onclick="startGame()" class="play_button">
+        PLAY
+      </div>
+    </div>
+
+    <div class="window">
+      <div class="info_wrapper">
+        <div class="stats">
+          <div class="stats_heading">
+            AIM:
+          </div>
+          <div class="aim"></div>
+        </div>
+        <div class="stats">
+          <div class="stats_heading">
+            Circles per minute:
+          </div>
+          <div class="speed"></div>
+        </div>
+      </div>
+
+      <div id="circle_id_1" class="item"></div>
+
+      <div id="circle_id_2" class="item"></div>
+
+      <div id="circle_id_3" class="item"></div>
+    </div>
+
+    <div class="results_window">
+      <div class="results_element">
+        <div class="result_name">AIM</div>
+        <span id="result_aim"></span>
+      </div>
+      <div class="results_element">
+        <div class="result_name">SPEED</div>
+        <span id="result_speed"></span>
+      </div>
+      <div class="result_button" onclick="location.reload()">
+        Play again!
+      </div>
+    </div>
+    <audio></audio>
+  </body>
+</html>
